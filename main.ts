@@ -5,9 +5,13 @@ function divisions(pointCount: number): number {
 }
 
 let pointCount = 1;
-while (pointCount < 10) {
+while (pointCount <= 1000000) {
     // console.log(`Factorial of ${pointCount}: ${factorial(pointCount)}`)
-    console.log(divisions(pointCount))
+    const divisionCount: number = divisions(pointCount)
+    const isPowerOf2: boolean = (divisionCount & (divisionCount - 1)) == 0
+
+    if (isPowerOf2)
+        console.log(`Found a division that's a power of 2! ${divisionCount} with ${pointCount} points`)
 
     pointCount ++
 }
